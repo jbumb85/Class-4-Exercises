@@ -13,11 +13,15 @@
 // Return 0 if given an empty array.
 // All array items are of the type bool (true or false).
 
+function countTrue(arr) {
+  let count = 0;
+  for (let i = 0; i < arr.length; i++)
+    if (arr[i] === true) {
+      count++;
+    }
+  return count;
+}
 
-
-function countValues(group) {
-    for(let i = 0; i < group.length; i++)
-        if(group[i] === "true") {
-
-        }
-    }        
+console.log(countTrue([true, false, false, true, false])); //  2
+console.log(countTrue([])); //  0
+console.log(countTrue([false, false, false, false])); //  0
