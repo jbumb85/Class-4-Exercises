@@ -1,39 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link
-    rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-  />
-  <style>
-body, .jumbotron {
-    padding: 30px;
-    background: #1CE;
-} 
-.clock {
-    background: #EFEFEF;
-    font-size: 50px;
-}
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <style>
+      body, .jumbotron {
+          padding: 30px;
+          background: #1CE;
+      }
+      .clock {
+          background: #EFEFEF;
+          font-size: 50px;
+      }
+      h1 {
+          background-color: white;
+          text-align: center;
+      }
+      p {
+        background-color: white;
+        text-align: center;
+        font-size: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Clock</h1>
+    <p id="timer"></p>
 
-</style>
-</head>
-   <body>
-    
-      <div class="jumbotron text-center">
-            <div class="clock">
-                <span class = "hours">00</span> : <span class = "minutes">00</span class = "seconds"> : <span>00</span>
-            </div>
-      </div>
+    <button onclick="clearInterval(myInterval)">Stop</button>
 
-
-        <script>
-        const hours = document.querySelector('.hours');
-        const minutes = document.querySelector('.minutes')
-
-        </script>
-    </body>
+    <script>
+      let myInterval = setInterval(() => {
+        let d = new Date();
+        document.getElementById("timer").innerHTML = d.toLocaleTimeString();
+      }, 1000);
+    </script>
+  </body>
 </html>
